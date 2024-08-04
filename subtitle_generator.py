@@ -15,7 +15,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def processvid(filepath):
-    aai.settings.api_key = ""
+    aai.settings.api_key = "#api key"
     with open(filepath, 'rb') as file:
         transcript = aai.Transcriber().transcribe(file.read())
     subtitles = transcript.export_subtitles_srt()
